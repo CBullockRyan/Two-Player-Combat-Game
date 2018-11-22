@@ -1,0 +1,21 @@
+CC=g++
+exe=run
+
+$(exe): main.o Character.o Blue.o Gollum.o Medusa.o Potter.o Reptile.o
+	$(CC) main.o Character.o Blue.o Gollum.o Medusa.o Potter.o Reptile.o  -o $(exe)
+main.o: main.cpp
+	$(CC) -c main.cpp
+Character.o: Character.cpp
+	$(CC) -c Character.cpp
+Blue.o: Blue.cpp
+	$(CC) -c Blue.cpp
+Gollum.o: Gollum.cpp
+	$(CC) -c Gollum.cpp
+Medusa.o: Medusa.cpp
+	$(CC) -c Medusa.cpp
+Potter.o: Potter.cpp
+	$(CC) -c Potter.cpp
+Reptile.o: Reptile.cpp
+	$(CC) -c Reptile.cpp
+clean:
+	rm -f a.out $(exe) *.o
